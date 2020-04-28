@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shishu Git Part 1</title>
+</head>
+<style>
+body { margin:0;
+	font-family:arial;
+	background:url(images/body-bg23.jpg) no-repeat center center;
+	background-size:cover;
+	background-attachment:fixed;
+}
+.content {
+	margin:0 auto;
+	padding:50px 25px;
+	max-width:800px;
+	text-align: center;
+    background:rgba(208,230,226,0.7);
+}
+
+.h4 {
+margin:15px 0 8px;
+font-size:16px;
+font-weight:bold;
+}
+.h4 span { margin-left:10px; font-size:14px;}
+audio { width: 400px; }
+.songitem {
+padding: 10px;
+border:1px solid #000000;
+margin-bottom:10px;
+	}
+  a.back-btn {
+    background:#345c34;
+    color:#ffffff;
+    display:inline-block;
+    padding:10px 20px; 
+    border-radius:5px; 
+    text-decoration:none;
+} 
+a.back-btn:hover {
+    background:#c17117;
+} 
+
+#playlist {
+	list-style: none;
+	text-align: left;
+	margin: 15px 0 8px;
+	padding: 0;
+}
+#playlist li {
+	margin: 5px 0;
+	background: #ece2e6;
+	padding: 8px 20px;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+}
+#playlist li.current-song {background: #dd2b97;}
+#playlist li a{
+	color:black;	
+font-size:16px;
+font-weight:bold;
+	text-decoration: none;
+}
+#playlist li span { margin-left:30px; display:inline-block; vertical-align:middle;}
+#playlist .current-song a {
+	color: #fff;
+}
+
+@media only screen and (max-width: 450px) {
+  audio { width: 300px; }
+  .content {
+	padding:50px 15px;
+}
+}
+</style>
+<body>
+<div class="content">
+<h1>શિશુ ગીત - ભાગ 1</h1>
+
+<p>Click on the play button to play a sound:</p>
+<p><a class="back-btn" href="/panchkosh/shishugit-1/">Go Back</a></p>
+
+<div class="songitem">
+<audio src="" controls id="audioPlayer" >
+        Sorry, your browser doesn't support html5!
+    </audio>
+	<br /><br />
+	<a href="javascript:void(0)" onclick="playlist.prevTrack();"><img src="images/previous-track-button.svg" width="25" /></a>
+    <a href="javascript:void(0)" onclick="playlist.nextTrack();"><img src="images/play-and-pause-button.svg" width="25" /></a>
+    <a href="javascript:void(0)" onclick="playlist.toggleShuffle();"><img src="images/shuffle.svg" width="25" /></a>
+</div>	
+	
+    <ul id="playlist">
+        <li>
+			<a class="audioitem" href="audio/01_Aaspas_Aakash_ma.mp3">01 Aaspas Aakash ma</a>
+			<a target="_blank" download="01_Aaspas_Aakash_ma.mp3" href="audio/01_Aaspas_Aakash_ma.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+        <li>
+			<a class="audioitem" href="audio/02_Suraj_Chandra.mp3">02 Suraj Chandra</a>
+			<a target="_blank" download="02_Suraj_Chandra.mp3" href="audio/02_Suraj_Chandra.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+        <li><a class="audioitem" href="audio/03_Hathi_Jevi_Sundh.mp3">03 Hathi Jevi Sundh</a> <span><a target="_blank" download="03_Hathi_Jevi_Sundh.mp3" href="audio/03_Hathi_Jevi_Sundh.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+        <li><a class="audioitem" href="audio/04_Ayodhyana_Raja_Ram.mp3">04 Ayodhyana Raja Ram</a> <span><a target="_blank" download="04_Ayodhyana_Raja_Ram.mp3" href="audio/04_Ayodhyana_Raja_Ram.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+        <li><a class="audioitem" href="audio/05_Mathurama_Je_Janmyo_Chhe.mp3">05 Mathurama Je Janmyo Chhe</a> <span><a target="_blank" download="05_Mathurama_Je_Janmyo_Chhe.mp3" href="audio/05_Mathurama_Je_Janmyo_Chhe.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+		<li><a class="audioitem" href="audio/06_Vaishali_na_Rajkunvar.mp3">06 Vaishali na Rajkunvar</a> <span><a target="_blank" download="06_Vaishali_na_Rajkunvar.mp3" href="audio/06_Vaishali_na_Rajkunvar.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+		<li><a class="audioitem" href="audio/07_Gunono_Bhandar.mp3">07 Gunono Bhandar</a> <span><a target="_blank" download="07_Gunono_Bhandar.mp3" href="audio/07_Gunono_Bhandar.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+		<li><a class="audioitem" href="audio/08_Jene_Sinhna_Dant_Ganya.mp3">08 Jene Sinhna Dant Ganya</a> <span><a target="_blank" download="08_Jene_Sinhna_Dant_Ganya.mp3" href="audio/08_Jene_Sinhna_Dant_Ganya.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+		<li><a class="audioitem" href="audio/09_Vasudevno_Mantra.mp3">09 Vasudevno Mantra</a> <span><a target="_blank" download="09_Vasudevno_Mantra.mp3" href="audio/09_Vasudevno_Mantra.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+		<li><a class="audioitem" href="audio/10_Nam_Enu.mp3">10 Nam Enu</a> <span><a target="_blank" download="10_Nam_Enu.mp3" href="audio/10_Nam_Enu.mp3"><img src="images/download-bold.svg" width="20" /></a></span></li>
+		<li>
+			<a class="audioitem" href="audio/11_Ganga_Maiya.mp3">11 Ganga Maiya</a>
+			<a target="_blank" download="11_Ganga_Maiya.mp3" href="audio/11_Ganga_Maiya.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+		<li>
+			<a class="audioitem" href="audio/12_Parvat_Kayo_Chhe.mp3">12 Parvat Kayo Chhe</a>
+			<a target="_blank" download="12_Parvat_Kayo_Chhe.mp3" href="audio/12_Parvat_Kayo_Chhe.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+		<li>
+			<a class="audioitem" href="audio/13_Hun_to_Banish_Veer_Shivaji.mp3">13 Hun to Banish Veer Shivaji</a>
+			<a target="_blank" download="13_Hun_to_Banish_Veer_Shivaji.mp3" href="audio/13_Hun_to_Banish_Veer_Shivaji.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+		<li>
+			<a class="audioitem" href="audio/14_Lal_Rang_no_Suraj.mp3">14 Lal Rang no Suraj</a>
+			<a target="_blank" download="14_Lal_Rang_no_Suraj.mp3" href="audio/14_Lal_Rang_no_Suraj.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+		<li>
+			<a class="audioitem" href="audio/15_Lilu_Ghas.mp3">15 Lilu Ghas</a>
+			<a target="_blank" download="15_Lilu_Ghas.mp3" href="audio/15_Lilu_Ghas.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+		<li>
+			<a class="audioitem" href="audio/16_Krishnanu_Pitambar.mp3">16 Krishnanu Pitambar</a>
+			<a target="_blank" download="16_Krishnanu_Pitambar.mp3" href="audio/16_Krishnanu_Pitambar.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+		<li>
+			<a class="audioitem" href="audio/17_Fuggo_Fuggo.mp3">17 Fuggo Fuggo</a>
+			<a target="_blank" download="17_Fuggo_Fuggo.mp3" href="audio/17_Fuggo_Fuggo.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+		
+        
+    </ul>
+ <!---   
+		<li>
+			<a class="audioitem" href="audio/11.mp3"></a>
+			<a target="_blank" download="11.mp3" href="audio/11.mp3">
+				<img src="images/download-bold.svg" width="20" />
+			</a>
+		</li>
+
+
+<div class="songitem">
+<div class="h4">18 Nadi ma Shu Shu Chhe <span><a target="_blank" download="18_Nadi_ma_Shu_Shu_Chhe.mp3" href="audio/18_Nadi_ma_Shu_Shu_Chhe.mp3"><img src="images/download-bold.svg" width="20" /></a></span></div>
+<audio controls>
+  <source src="audio/18_Nadi_ma_Shu_Shu_Chhe.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/18_Nadi_ma_Shu_Shu_Chhe.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">19 Dedako Machhali <span><a target="_blank" download="19_Dedako_Machhali.mp3" href="audio/19_Dedako_Machhali.mp3"><img src="images/download-bold.svg" width="20" /></a></span></div>
+<audio controls>
+  <source src="audio/19_Dedako_Machhali.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/19_Dedako_Machhali.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">20 Kali Hun Chhun <span><a target="_blank" download="20_Kali_Hun_Chhun.mp3" href="audio/20_Kali_Hun_Chhun.mp3"><img src="images/download-bold.svg" width="20" /></a></span></div>
+<audio controls>
+  <source src="audio/20_Kali_Hun_Chhun.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/20_Kali_Hun_Chhun.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">21 Rang Rangili Pankho <span><a target="_blank" download="21_Rang_Rangili_Pankho.mp3" href="audio/21_Rang_Rangili_Pankho.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/21_Rang_Rangili_Pankho.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/21_Rang_Rangili_Pankho.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">22 Dholo Dholo Rang Maro <span><a target="_blank" download="22_Dholo_Dholo_Rang_Maro.mp3" href="audio/22_Dholo_Dholo_Rang_Maro.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/22_Dholo_Dholo_Rang_Maro.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/22_Dholo_Dholo_Rang_Maro.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">23 Vaheli Savare <span><a target="_blank" download="23_Vaheli_Savare.mp3" href="audio/23_Vaheli_Savare.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/23_Vaheli_Savare.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/23_Vaheli_Savare.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">24 Me Ek Biladi <span><a target="_blank" download="24_Me_Ek_Biladi.mp3" href="audio/24_Me_Ek_Biladi.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/24_Me_Ek_Biladi.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/24_Me_Ek_Biladi.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">25 Ame Nani Nani Chakalio <span><a target="_blank" download="25_Ame_Nani_Nani_Chakalio.mp3" href="audio/25_Ame_Nani_Nani_Chakalio.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/25_Ame_Nani_Nani_Chakalio.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/25_Ame_Nani_Nani_Chakalio.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">26 Myau Myau <span><a target="_blank" download="26_Myau_Myau.mp3" href="audio/26_Myau_Myau.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/26_Myau_Myau.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/26_Myau_Myau.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">27 Khau Tkhu Bolu Mithu <span><a target="_blank" download="27_Khau_Tkhu_Bolu_Mithu.mp3" href="audio/27_Khau_Tkhu_Bolu_Mithu.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/27_Khau_Tkhu_Bolu_Mithu.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/27_Khau_Tkhu_Bolu_Mithu.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">28 Chando Malak Malak <span><a target="_blank" download="28_Chando_Malak_Malak.mp3" href="audio/28_Chando_Malak_Malak.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/28_Chando_Malak_Malak.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/28_Chando_Malak_Malak.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">29 Mane Pankhi Nanu <span><a target="_blank" download="29_Mane_Pankhi_Nanu.mp3" href="audio/29_Mane_Pankhi_Nanu.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/29_Mane_Pankhi_Nanu.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/29_Mane_Pankhi_Nanu.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">30 Aa Datardu Kevu <span><a target="_blank" download="30_Aa_Datardu_Kevu.mp3" href="audio/30_Aa_Datardu_Kevu.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/30_Aa_Datardu_Kevu.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/30_Aa_Datardu_Kevu.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">31 Chakali Bole Chi Chi Chi <span><a target="_blank" download="31_Chakali_Bole_Chi_Chi_Chi.mp3" href="audio/31_Chakali_Bole_Chi_Chi_Chi.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/31_Chakali_Bole_Chi_Chi_Chi.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/31_Chakali_Bole_Chi_Chi_Chi.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">32 Ravi Pachhi to Som Chhe <span><a target="_blank" download="32_Ravi_Pachhi_to_Som_Chhe.mp3" href="audio/32_Ravi_Pachhi_to_Som_Chhe.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/32_Ravi_Pachhi_to_Som_Chhe.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/32_Ravi_Pachhi_to_Som_Chhe.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">33 Gulab Pase Jaine <span><a target="_blank" download="33_Gulab_Pase_Jaine.mp3" href="audio/33_Gulab_Pase_Jaine.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/33_Gulab_Pase_Jaine.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/33_Gulab_Pase_Jaine.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">34 Ek Ek Bundnu Bantu <span><a target="_blank" download="34_Ek_Ek_Bundnu_Bantu.mp3" href="audio/34_Ek_Ek_Bundnu_Bantu.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/34_Ek_Ek_Bundnu_Bantu.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/34_Ek_Ek_Bundnu_Bantu.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">35 Abhathi Varse <span><a target="_blank" download="35_Abhathi_Varse.mp3" href="audio/35_Abhathi_Varse.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/35_Abhathi_Varse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/35_Abhathi_Varse.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">36 Sar Sar Ude Patang <span><a target="_blank" download="36_Sar_Sar_Ude_Patang.mp3" href="audio/36_Sar_Sar_Ude_Patang.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/36_Sar_Sar_Ude_Patang.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/36_Sar_Sar_Ude_Patang.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">37 Dholaki Vage <span><a target="_blank" download="37_Dholaki_Vage.mp3" href="audio/37_Dholaki_Vage.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/37_Dholaki_Vage.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/37_Dholaki_Vage.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">38 Ek Ek Kaheta Ubha Thao <span><a target="_blank" download="38_Ek_Ek_Kaheta_Ubha_Thao.mp3" href="audio/38_Ek_Ek_Kaheta_Ubha_Thao.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/38_Ek_Ek_Kaheta_Ubha_Thao.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/38_Ek_Ek_Kaheta_Ubha_Thao.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">39 Popat ne Chanch Ketali <span><a target="_blank" download="39_Popat_ne_Chanch_Ketali.mp3" href="audio/39_Popat_ne_Chanch_Ketali.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/39_Popat_ne_Chanch_Ketali.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/39_Popat_ne_Chanch_Ketali.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">40 Hath Amara <span><a target="_blank" download="40_Hath_Amara.mp3" href="audio/40_Hath_Amara.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/40_Hath_Amara.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/40_Hath_Amara.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">41 Vaddada <span><a target="_blank" download="41_Vaddada.mp3" href="audio/41_Vaddada.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/41_Vaddada.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/41_Vaddada.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">42 Nana Amane <span><a target="_blank" download="42_Nana_Amane.mp3" href="audio/42_Nana_Amane.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/42_Nana_Amane.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/42_Nana_Amane.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">43 Banu Avo Bahadur <span><a target="_blank" download="43_Banu_Avo_Bahadur.mp3" href="audio/43_Banu_Avo_Bahadur.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/43_Banu_Avo_Bahadur.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/43_Banu_Avo_Bahadur.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">44 Hun Nana Hato <span><a target="_blank" download="44_Hun_Nana_Hato.mp3" href="audio/44_Hun_Nana_Hato.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/44_Hun_Nana_Hato.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/44_Hun_Nana_Hato.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">45 Bharat Jeva Vishal Deshe <span><a target="_blank" download="45_Bharat_Jeva_Vishal_Deshe.mp3" href="audio/45_Bharat_Jeva_Vishal_Deshe.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/45_Bharat_Jeva_Vishal_Deshe.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/45_Bharat_Jeva_Vishal_Deshe.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">46 Kadio Moto Karigar <span><a target="_blank" download="46_Kadio_Moto_Karigar.mp3" href="audio/46_Kadio_Moto_Karigar.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/46_Kadio_Moto_Karigar.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/46_Kadio_Moto_Karigar.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+<div class="h4">47 Ganpatibapa <span><a target="_blank" download="47_Ganpatibapa.mp3" href="audio/47_Ganpatibapa.mp3">Download</a></span></div>
+<audio controls>
+  <source src="audio/47_Ganpatibapa.mp3" type="audio/mpeg">
+  Your browser does not support the audio element. <a href="audio/47_Ganpatibapa.mp3">Click to Play</a>
+</audio>
+</div>
+
+<div class="songitem">
+  <div class="h4">48 Bolo Bolo Kon <span><a target="_blank" download="48_Bolo_Bolo_Kon.mp3" href="audio/48_Bolo_Bolo_Kon.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/48_Bolo_Bolo_Kon.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/48_Bolo_Bolo_Kon.mp3">Click to Play</a>
+  </audio>
+  </div>
+
+<div class="songitem">
+  <div class="h4">49 He Bhagavan <span><a target="_blank" download="49_He_Bhagavan.mp3" href="audio/49_He_Bhagavan.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/49_He_Bhagavan.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/49_He_Bhagavan.mp3">Click to Play</a>
+  </audio>
+</div>
+
+<div class="songitem">
+  <div class="h4">50 Hathi dada <span><a target="_blank" download="50_Hathi_dada.mp3" href="audio/50_Hathi_dada.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/50_Hathi_dada.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/50_Hathi_dada.mp3">Click to Play</a>
+  </audio>
+  </div>
+
+<div class="songitem">
+  <div class="h4">51 Parvat ki Choti par <span><a target="_blank" download="51_Parvat_ki_Choti_par.mp3" href="audio/51_Parvat_ki_Choti_par.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/51_Parvat_ki_Choti_par.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/51_Parvat_ki_Choti_par.mp3">Click to Play</a>
+  </audio>
+  </div>
+
+<div class="songitem">
+  <div class="h4">52 Gauri Gauri <span><a target="_blank" download="52_Gauri_Gauri.mp3" href="audio/52_Gauri_Gauri.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/52_Gauri_Gauri.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/52_Gauri_Gauri.mp3">Click to Play</a>
+  </audio>
+  </div>
+
+<div class="songitem">
+  <div class="h4">53 Chataka Brute <span><a target="_blank" download="53_Chataka_Brute.mp3" href="audio/53_Chataka_Brute.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/53_Chataka_Brute.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/53_Chataka_Brute.mp3">Click to Play</a>
+  </audio>
+  </div>
+
+<div class="songitem">
+  <div class="h4">54 Ghati Madiya <span><a target="_blank" download="54_Ghati_Madiya.mp3" href="audio/54_Ghati_Madiya.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/54_Ghati_Madiya.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/54_Ghati_Madiya.mp3">Click to Play</a>
+  </audio>
+  </div>
+
+<div class="songitem">
+  <div class="h4">55 Bhek Vadati <span><a target="_blank" download="55_Bhek_Vadati.mp3" href="audio/55_Bhek_Vadati.mp3">Download</a></span></div>
+  <audio controls>
+    <source src="audio/55_Bhek_Vadati.mp3" type="audio/mpeg">
+    Your browser does not support the audio element. <a href="audio/55_Bhek_Vadati.mp3">Click to Play</a>
+  </audio>
+  </div>
+  -->
+
+</div>  
+
+
+<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="js/audioPlayer.js"></script>
+    <script>
+        
+        /*
+    Default constructor configuration:
+        autoplay: false,
+        shuffle: false,
+        loop: false,
+        playerId: "audioPlayer",
+        playlistId: "playlist",
+        currentClass: "current-song"
+        
+        
+*/
+        
+        // loads the audio player
+        var config = {
+          autoplay: true, 
+            loop: true,
+            shuffle: true
+        };
+        var playlist = new AudioPlaylist();
+        
+    </script>
+
+</body>
+
+</html>
+
