@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Shishu Git Part 1</title>
-</head>
+
 <style>
 body { margin:0;
 	font-family:arial;
@@ -27,7 +27,14 @@ font-size:16px;
 font-weight:bold;
 }
 .h4 span { margin-left:10px; font-size:14px;}
-audio { width: 400px; }
+audio {
+	width: 400px;
+	display: block;
+	margin: 0 auto;
+	background: #f1f3f4;
+	border-radius: 30px 30px 0 0;
+}
+
 .songitem {
 padding: 10px;
 border:1px solid #000000;
@@ -53,14 +60,14 @@ a.back-btn:hover {
 }
 #playlist li {
 	margin: 5px 0;
-	background: #ece2e6;
+	background: #bdbcf7;
 	padding: 8px 20px;
 	display: flex;
 	justify-content: space-between;
 	align-content: center;
 	align-items: center;
 }
-#playlist li.current-song {background: #dd2b97;}
+#playlist li.current-song {background: #9a7ee0;}
 #playlist li a{
 	color:black;	
 font-size:16px;
@@ -72,6 +79,47 @@ font-weight:bold;
 	color: #fff;
 }
 
+.controlbtns {
+	max-width: 400px;
+	margin: 0 auto;
+	background: #f1f3f4;
+	padding: 10px;
+	box-sizing: border-box;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	box-shadow: 0px 10px 14px -7px #3e7327;
+}
+
+.controlbtns a img {display: block;}
+
+.controlButton {
+	box-shadow:inset 0px 1px 10px -7px #caefab;
+	background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+	background-color:#77d42a;
+	border-radius:6px;
+	border:1px solid #268a16;
+	display:inline-block;
+	cursor:pointer;
+	color:#306108;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:5px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #aade7c;
+}
+.controlButton:hover {
+	background:linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+	background-color:#5cb811;
+}
+.controlButton:active {
+	position:relative;
+	top:1px;
+}
+
+
 @media only screen and (max-width: 450px) {
   audio { width: 300px; }
   .content {
@@ -79,6 +127,7 @@ font-weight:bold;
 }
 }
 </style>
+</head>
 <body>
 <div class="content">
 <h1>શિશુ ગીત - ભાગ 1</h1>
@@ -90,10 +139,11 @@ font-weight:bold;
 <audio src="" controls id="audioPlayer" >
         Sorry, your browser doesn't support html5!
     </audio>
-	<br /><br />
-	<a href="javascript:void(0)" onclick="playlist.prevTrack();"><img src="images/previous-track-button.svg" width="25" /></a>
-    <a href="javascript:void(0)" onclick="playlist.nextTrack();"><img src="images/play-and-pause-button.svg" width="25" /></a>
-    <a href="javascript:void(0)" onclick="playlist.toggleShuffle();"><img src="images/shuffle.svg" width="25" /></a>
+	<div class="controlbtns">
+	<a class="controlButton" href="javascript:void(0)" onclick="playlist.prevTrack();"><img src="images/previous-track-button.svg" width="25" /></a>    
+    <a class="controlButton" href="javascript:void(0)" onclick="playlist.toggleShuffle();"><img src="images/shuffle.svg" width="25" /></a>
+	<a class="controlButton" href="javascript:void(0)" onclick="playlist.nextTrack();"><img src="images/play-and-pause-button.svg" width="25" /></a>
+	</div>
 </div>	
 	
     <ul id="playlist">
