@@ -32,7 +32,7 @@ class AudioPlaylist{
     setTrack(arrayPos){
     
         var liPos = this.trackOrder[arrayPos]; // convert array index to html index
-        this.player.src = $("#"+this.playlistId+ " li a").eq(liPos).attr("href");
+        this.player.src = $("#"+this.playlistId+ " li a.audioitem").eq(liPos).attr("href");
         $("."+this.currentClass).removeClass(this.currentClass);
         $("#"+this.playlistId+ " li").eq(liPos).addClass(this.currentClass);
         this.trackPos = arrayPos; // update based on array index position
