@@ -15,10 +15,24 @@ body { margin:0;
 }
 .content {
 	margin:0 auto;
-	padding:50px 25px;
+	padding:5px 25px 50px 25px;
 	max-width:800px;
 	text-align: center;
     background:rgba(208,230,226,0.7);
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	left: 0;
+	max-width: 780px;
+	right: 0;
+	margin: 0 auto;
+	background:#f1f3f4;
+}
+
+.sticky + #playlist {
+  padding-top: 125px;
 }
 
 .h4 {
@@ -126,7 +140,7 @@ font-weight:bold;
 	max-width: 300px;
 }
   .content {
-	padding:50px 15px;
+	padding:5px 15px 50px 15px;
 }
 }
 </style>
@@ -137,7 +151,7 @@ font-weight:bold;
 
 <p>Click on the play button to play a story:</p>
 
-<div class="songitem">
+<div id="myAudio" class="songitem">
 <audio src="" controls id="audioPlayer" >
         Sorry, your browser doesn't support html5!
     </audio>
@@ -1678,5 +1692,19 @@ font-weight:bold;
         var playlist = new AudioPlaylist();
         
     </script>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myAudio");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+	header.classList.add("sticky");
+  } else {
+	header.classList.remove("sticky");
+  }
+}
+</script>
 </body>
 </html>
